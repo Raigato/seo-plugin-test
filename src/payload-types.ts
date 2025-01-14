@@ -103,6 +103,10 @@ export interface Page {
   id: string;
   title: string;
   slug: string;
+  list: {
+    label: string;
+    id?: string | null;
+  }[];
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -215,6 +219,12 @@ export interface MediaSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  list?:
+    | T
+    | {
+        label?: T;
+        id?: T;
+      };
   meta?:
     | T
     | {
